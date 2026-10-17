@@ -1,6 +1,6 @@
 # omnischolar/hal
 
-HAL, the French open archive, for [glitchr/omnischolar](https://github.com/glitchr-studio/omnischolar):
+HAL, the French open archive, for [omniscient/omnischolar](https://github.com/glitchr-studio/omnischolar):
 an author's deposits - by idHAL, ORCID or the name they sign - with their full texts in open
 access; a deposit by its HAL id, DOI or arXiv id; a search; and on every query a filter by domain:
 `shs.droit` is the legal scholarship (doctrine) HAL holds. No key.

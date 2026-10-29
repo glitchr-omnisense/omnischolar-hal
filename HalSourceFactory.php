@@ -13,6 +13,7 @@ use Symfony\Component\HttpClient\HttpClient;
  *   options:
  *     domains: ['shs.droit']                       # a filter on every query (HAL domain codes); none by default
  *     base_uri: 'https://api.archives-ouvertes.fr/'
+ *     throttle: 0                           # seconds between two calls
  */
 final class HalSourceFactory extends SourceFactory
 {
@@ -33,6 +34,7 @@ final class HalSourceFactory extends SourceFactory
             array_values(array_map('strval', (array) $c->get('domains', []))),
             (string) $c->get('base_uri', HalSource::BASE_URI),
             ['User-Agent' => self::userAgent($c)],
+            (float) $c->get('throttle', 0.0),
         );
     }
 }

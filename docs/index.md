@@ -39,10 +39,7 @@ None.
 | `mailto` | string | `null` | no | added to the `User-Agent` |
 | `user_agent` | string | `omnischolar/1.x (+https://github.com/glitchr-omnisense/omnischolar)` | no | |
 | `base_uri` | string | `https://api.archives-ouvertes.fr/` | no | |
-
-> [!WARNING]
-> Known defect: `throttle` is not read by this factory (the source has no interval), where every
-> factory is said to take it.
+| `throttle` | float | `0.0` | no | seconds left between two calls of the source |
 
 ## Capabilities
 

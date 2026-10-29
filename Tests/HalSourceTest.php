@@ -174,4 +174,15 @@ final class HalSourceTest extends TestCase
         }
         self::fail($hal.' not found');
     }
+
+    /** The throttle every factory takes (SourceFactory): seconds left between two calls. */
+    public function testTheThrottleLeavesItsSeconds(): void
+    {
+        $http = new MockHttpClient(static fn (): MockResponse => new MockResponse((string) file_get_contents(__DIR__.'/Fixtures/work-doi.json')));
+        $source = (new HalSourceFactory($http))->create(['throttle' => 0.3]);
+        $start = microtime(true);
+        $source->work('doi:10.1039/D4SC04973J');
+        $source->work('doi:10.1039/D4SC04973J');
+        self::assertGreaterThanOrEqual(0.29, microtime(true) - $start);
+    }
 }

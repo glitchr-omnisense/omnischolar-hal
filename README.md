@@ -22,6 +22,14 @@ omnischolar:
 
 See [docs/](docs/index.md).
 
+## Install
+
+```sh
+composer require omnischolar/hal
+```
+
+It brings the family's core, `omnisense/omnischolar`, and `omnisense/contracts` with it. No account and no key ([`policy.json`](policy.json)). `$http` is `HttpClient::create()` in plain PHP.
+
 ## Usage policy
 
 Declared as data in [`policy.json`](policy.json) (read at https://api.archives-ouvertes.fr/docs on 2026-11-10), and honoured on every request by the

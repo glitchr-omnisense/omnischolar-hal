@@ -111,9 +111,9 @@ final class HalSource extends HttpSource
     }
 
     /**
-     * An author's deposits: by idHAL ("keitaro-nakatani"), ORCID (only the
+     * An author's deposits: by idHAL ("philippe-grangier"), ORCID (only the
      * deposits where the ORCID was linked) or the name as signed
-     * ("Keitaro Nakatani", exact).
+     * ("Alain Aspect", exact).
      */
     public function works(Identifier|string $author, ?Query $query = null): Page
     {

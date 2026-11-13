@@ -7,8 +7,8 @@ access; a deposit by its HAL id, DOI or arXiv id; a search; and on every query a
 
 ```php
 $hal = (new HalSourceFactory($http))->create();
-$hal->works('Keitaro Nakatani');                                         // the deposits signed so
-$hal->works('remi-metivier');                                            // by idHAL
+$hal->works('Alain Aspect');                                             // the deposits signed so
+$hal->works('philippe-grangier');                                        // by idHAL
 $droit = (new HalSourceFactory($http))->create(['domains' => ['shs.droit']]);
 $droit->search(new Query(text: 'responsabilité civile', from: 2024));
 ```

@@ -95,7 +95,7 @@ echo $page->total, " deposits in shs.droit since 2025, first 3:\n";
 foreach ($page as $work) {
     printf("  %s  %-10s %s%s %s\n", $work->date ?? $work->year, $work->type->value, mb_substr($work->fullTitle(), 0, 80), $work->venue ? ' - '.mb_substr($work->venue->name, 0, 40) : '', $work->id(Scheme::HAL));
 }
-$author = $droit->author('remi-metivier');
+$author = $droit->author('philippe-grangier');
 echo $author->name, ' ', implode(' ', $author->identifiers->keys()), "\n";
 ```
 
@@ -104,11 +104,11 @@ echo $author->name, ' ', implode(' ', $author->identifiers->keys()), "\n";
   2027  book       Responsables mais pas coupables ? La responsabilité des gouvernants en questions hal-05362813
   2026-10-15  article    Le nouvel article 1254 du code civil : entre appel à une meilleure utilisation d - Recueil Dalloz halshs-05798370
   2026-10-13  article    La diagonale des prudences : l'opérateur sportif associatif saisi par le droit c - Jurisport : La revue juridique et économ halshs-05802506
-Rémi Métivier idhal:remi-metivier orcid:0000-0001-5612-8327
+Philippe Grangier idhal:philippe-grangier orcid:0000-0001-8211-8958
 ```
 
 (called live on 2026-10-26 at 14:18 UTC, from the core's harness image; the first deposit is a
-forthcoming book, dated 2027 by HAL)
+forthcoming book, dated 2027 by HAL; the author's line from the answer recorded on 2026-11-13)
 
 In Symfony:
 
@@ -132,13 +132,13 @@ omnischolar:
 ## Verified, and not
 
 Tested offline: `Tests/HalSourceTest.php` (7 tests), on `MockHttpClient` with answers recorded on
-2026-10-04 - two pages of Keitaro Nakatani's deposits (108), a search in `shs.droit` (510 answers
-for "responsabilité civile" since 2024), a deposit by DOI, an author by idHAL (remi-metivier).
-Called live on 2026-10-04 and on 2026-10-26 (the example above).
+2026-11-13 - two pages of Alain Aspect's deposits (571), a deposit by DOI, an author by idHAL
+(philippe-grangier) - and on 2026-10-04 a search in `shs.droit` (510 answers for "responsabilité
+civile" since 2024). Called live on 2026-10-04, 2026-10-26 (the example above) and 2026-11-13.
 
 Limits of the service: the contributors' ORCIDs are not aligned with their names in the search
 answers (a work's contributors carry their idHAL only); `works()` by ORCID finds only the deposits
-where the ORCID was linked (24 of Keitaro Nakatani's 108 on 2026-10-04); by name, only the exact
+where the ORCID was linked; by name, only the exact
 form signed; some deposits are dated in the future (a forthcoming book).
 
 ## Responsibility
